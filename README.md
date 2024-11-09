@@ -27,7 +27,9 @@ Or use the following if you're using `yarn`:
 yarn add native-sass
 ```
 
-## Nesting
+## Features
+
+### Nesting
 
 Suppose we have the following StyleSheet:
 
@@ -92,7 +94,7 @@ const styles = StyleSheet.create(sassy({
 
 This object passed to `sassy` will be flattened into the object of the previous snippet. The nested keys are capitalized and concatenated with the parent keys, so `dialog.actions.btn.text` becomes `dialogActionsBtnText`. The nested styles are then merged in order to return the object that the `StyleSheet.create()` method expects.
 
-## Shared values
+### Shared values
 
 Suppose we have the following stylesheet:
 
@@ -160,7 +162,11 @@ const styles = StyleSheet.create(sassy({
 
 We wrap the keys we want to apply the shared styles to with quotes and separate them with commas.
 
-## Mixins
+## Built-in functionalities
+
+Some Sass functionalities, like mixins and maps, can be mimicked using built-in JS capabilities.
+
+### Mixins
 
 Mixins can be applied to a style object using the built-in JavaScript spread operator `...`, so no need to use `sassy` (unless nesting or shared styles are present). Example:
 
