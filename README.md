@@ -1,4 +1,13 @@
-# NativeSass
+<div align="center">
+<p align="center">
+    <img src="./assets/nativesass.png" alt="NativeSass" width="70" height="70">
+    <h1 align="center" style="color:red;">NativeSass</h1>
+</p>
+
+[![npm version](https://img.shields.io/npm/v/native-sass)](https://www.npmjs.com/package/native-sass)
+[![npm downloads](https://img.shields.io/npm/dw/native-sass)](https://www.npmjs.com/package/native-sass)
+</div>
+<br />
 
 ## About
 
