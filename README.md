@@ -1,4 +1,17 @@
-# native-sass
+<div align="center">
+<p align="center">
+    <img src="./assets/nativesass.png" alt="NativeSass" width="70" height="70">
+    <h1 align="center" style="color:red;">NativeSass</h1>
+</p>
+
+[![npm version](https://img.shields.io/npm/v/native-sass)](https://www.npmjs.com/package/native-sass)
+[![npm downloads](https://img.shields.io/npm/dw/native-sass)](https://www.npmjs.com/package/native-sass)
+[![Github](https://img.shields.io/github/license/filipe-2/native-sass)](https://github.com/filipe-2/native-sass)
+[![runs-with-expo](https://img.shields.io/badge/Runs%20with%20Expo%20Go-4630EB.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000)](https://expo.dev/client)
+</div>
+
+## About
+
 A React Native library that allows you to use Sass- and CSS-like functionalities, like nesting and shared styles. With this library, you can nest styles and use shared styles to apply properties to multiple style objects at once, without losing the default experience of creating React Native stylesheets.
 
 ## Installation
@@ -15,7 +28,9 @@ Or use the following if you're using `yarn`:
 yarn add native-sass
 ```
 
-## Nesting
+## Features
+
+### Nesting
 
 Suppose we have the following StyleSheet:
 
@@ -80,7 +95,7 @@ const styles = StyleSheet.create(sassy({
 
 This object passed to `sassy` will be flattened into the object of the previous snippet. The nested keys are capitalized and concatenated with the parent keys, so `dialog.actions.btn.text` becomes `dialogActionsBtnText`. The nested styles are then merged in order to return the object that the `StyleSheet.create()` method expects.
 
-## Shared values
+### Shared values
 
 Suppose we have the following stylesheet:
 
@@ -148,7 +163,11 @@ const styles = StyleSheet.create(sassy({
 
 We wrap the keys we want to apply the shared styles to with quotes and separate them with commas.
 
-## Mixins
+## Built-in functionalities
+
+Some Sass functionalities, like mixins and maps, can be mimicked using built-in JS capabilities.
+
+### Mixins
 
 Mixins can be applied to a style object using the built-in JavaScript spread operator `...`, so no need to use `sassy` (unless nesting or shared styles are present). Example:
 
