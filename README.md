@@ -6,6 +6,7 @@
 
 [![npm version](https://img.shields.io/npm/v/native-sass)](https://www.npmjs.com/package/native-sass)
 [![npm downloads](https://img.shields.io/npm/dw/native-sass)](https://www.npmjs.com/package/native-sass)
+[![Github](https://img.shields.io/github/license/filipe-2/native-sass)](https://github.com/native-sass/native-sass)
 </div>
 <br />
 
