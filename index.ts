@@ -1,5 +1,5 @@
-import { NativeStyle, NestedStyle } from './types';
-import { capitalize } from './utils';
+import { NativeStyle, NestedStyle } from './src/types';
+import { capitalize } from './src/utils';
 
 // List of keys that should not be flattened (compound styles)
 const ignoredKeys = ['shadowOffset'];
