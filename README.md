@@ -8,7 +8,6 @@
 [![npm downloads](https://img.shields.io/npm/dw/native-sass)](https://www.npmjs.com/package/native-sass)
 [![Github](https://img.shields.io/github/license/filipe-2/native-sass)](https://github.com/filipe-2/native-sass)
 </div>
-<br />
 
 ## About
 
