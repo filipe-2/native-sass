@@ -1,6 +1,6 @@
 <div align="center">
 <p align="center">
-    <img src="./assets/nativesass.png" alt="NativeSass" width="100" height="100">
+    <img src="./assets/nativesass.png" alt="NativeSass" width="150" height="150">
     <h1 align="center" style="color:red;">NativeSass</h1>
 </p>
 
