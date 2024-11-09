@@ -7,7 +7,7 @@
 [![npm version](https://img.shields.io/npm/v/native-sass)](https://www.npmjs.com/package/native-sass)
 [![npm downloads](https://img.shields.io/npm/dw/native-sass)](https://www.npmjs.com/package/native-sass)
 [![Github](https://img.shields.io/github/license/filipe-2/native-sass)](https://github.com/filipe-2/native-sass)
-[![runs-with-expo](https://img.shields.io/badge/Runs%20with%20Expo%20Go-4630EB.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000)]
+[![runs-with-expo](https://img.shields.io/badge/Runs%20with%20Expo%20Go-4630EB.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000)
 </div>
 
 ## About
