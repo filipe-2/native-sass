@@ -8,21 +8,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/filipe-2/native-sass.git"
+    "url": "git+https://github.com/filipe-2/nativesass.git"
   },
   "keywords": [
     "sass",
     "react",
     "react-native",
     "native-sass",
+    "nativesass",
     "native",
     "sassy",
     "nesting"
   ],
-  "author": "Carlos Filipe",
+  "author": "Filipe Ramos",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/filipe-2/native-sass/issues"
+    "url": "https://github.com/filipe-2/nativesass/issues"
   },
-  "homepage": "https://github.com/filipe-2/native-sass#readme"
+  "homepage": "https://github.com/filipe-2/nativesass#readme"
 }
