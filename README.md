@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-This stylesheet has a lot of style objects that we might want to nest. We can do that by using the `sassy` function from native-sass as follows:
+This stylesheet has a lot of style objects that we might want to nest. We can do that by using the `sassy` function from `native-sass` as follows:
 
 ```javascript
 import { StyleSheet } from 'react-native';
