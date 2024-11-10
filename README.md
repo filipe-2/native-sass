@@ -163,7 +163,7 @@ const styles = StyleSheet.create(sassy({
 
 We wrap the keys we want to apply the shared styles to with quotes and separate them with commas.
 
-## Built-in functionalities
+## Built-in JS functionalities
 
 Some Sass functionalities, like mixins and maps, can be mimicked using built-in JS capabilities.
 
