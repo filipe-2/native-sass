@@ -2,7 +2,7 @@ import { NestedStyle } from './types';
 
 
 // List of keys that should not be flattened (compound styles)
-const ignoredKeys: string[] = ['shadowOffset'];
+export const ignoredKeys: string[] = ['shadowOffset'];
 
 
 // Utility function to capitalize the first letter of each key segment
