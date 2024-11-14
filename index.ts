@@ -12,7 +12,7 @@ export function sassy(nestedStyles: NestedStyle, parentKey: string = ''): Native
     const value = nestedStyles[key];
 
     if (key.includes(',')) {
-      handleSharedStyles(key, value, sharedStylesMap);
+      handleSharedStyles(key, parentKey, value, sharedStylesMap);
     } else {
       const newKey = parentKey ? `${parentKey}${capitalize(key)}` : key;
 
@@ -20,7 +20,6 @@ export function sassy(nestedStyles: NestedStyle, parentKey: string = ''): Native
         if (ignoredKeys.includes(key)) {
           // If the key is in ignoredKeys, keep it as-is without flattening
           if (!nativeStyles[parentKey]) nativeStyles[parentKey] = {};
-          
           nativeStyles[parentKey][key] = value;
         } else {
           // Recursively flatten nested styles with updated parent context
@@ -29,7 +28,6 @@ export function sassy(nestedStyles: NestedStyle, parentKey: string = ''): Native
         }
       } else {
         if (!nativeStyles[parentKey]) nativeStyles[parentKey] = {};
-        
         nativeStyles[parentKey][key] = value as string | number;
       }
     }
@@ -38,7 +36,6 @@ export function sassy(nestedStyles: NestedStyle, parentKey: string = ''): Native
   // Apply shared styles within the appropriate nested contexts
   for (const selector in sharedStylesMap) {
     if (!nativeStyles[selector]) nativeStyles[selector] = {};
-    
     Object.assign(nativeStyles[selector], sharedStylesMap[selector]);
   }
 
