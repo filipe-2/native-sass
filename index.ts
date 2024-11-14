@@ -10,7 +10,9 @@ import {
 
 export function sassy(nestedStyles: NestedStyle, parentKey: string = ''): NativeStyle {
   const nativeStyles: NativeStyle = {};
-  const sharedStylesMap: { [key: string]: NestedStyle; } = {};
+  const sharedStylesMap: {
+    [key: string]: NestedStyle;
+  } = {};
   
   // Traverse each key-value pair in the nested styles object
   nestedStyles.forEach((key) => {
@@ -41,10 +43,10 @@ export function sassy(nestedStyles: NestedStyle, parentKey: string = ''): Native
   }
 
   // Apply shared styles within the appropriate nested contexts
-  for (const selector in sharedStylesMap) {
+  sharedStylesMap.forEach((selector) => {
     if (!nativeStyles[selector]) nativeStyles[selector] = {};
     Object.assign(nativeStyles[selector], sharedStylesMap[selector]);
-  }
+  });
 
   // Return the flattened stylesheet
   return nativeStyles;
