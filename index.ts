@@ -1,8 +1,5 @@
 import { NativeStyle, NestedStyle } from './src/types';
-import { capitalize, handleSharedStyles } from './src/utils';
-
-// List of keys that should not be flattened (compound styles)
-const ignoredKeys: string[] = ['shadowOffset'];
+import { ignoredKeys, capitalize, handleSharedStyles } from './src/utils';
 
 export function sassy(nestedStyles: NestedStyle, parentKey: string = ''): NativeStyle {
   const nativeStyles: NativeStyle = {};
