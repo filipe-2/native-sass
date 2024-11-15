@@ -1,41 +1,53 @@
 import { NativeStyle, NestedStyle } from './src/types';
-import { ignoredKeys, capitalize, handleSharedStyles } from './src/utils';
+import {
+  ignoredKeys,
+  capitalize,
+  handleSharedStyles,
+  isObject,
+  assignFlatStyle,
+  assignIgnoredKeyStyle
+} from './src/utils';
 
 export function sassy(nestedStyles: NestedStyle, parentKey: string = ''): NativeStyle {
   const nativeStyles: NativeStyle = {};
-  const sharedStylesMap: { [key: string]: NestedStyle; } = {};
+  const sharedStylesMap: {
+    [key: string]: NestedStyle;
+  } = {};
+
   // Traverse each key-value pair in the nested styles object
   for (const key in nestedStyles) {
     const value = nestedStyles[key];
-    
+
     // Handle comma-separated keys (shared styles)
     if (key.includes(',')) {
       handleSharedStyles(key, parentKey, value, sharedStylesMap);
-    } else {
-      const newKey = parentKey ? `${parentKey}${capitalize(key)}` : key;
-
-      if (typeof value === 'object' && !Array.isArray(value)) {
-        if (ignoredKeys.includes(key)) {
-          // If the key is in ignoredKeys, keep it as-is without flattening
-          if (!nativeStyles[parentKey]) nativeStyles[parentKey] = {};
-          nativeStyles[parentKey][key] = value;
-        } else {
-          // Recursively flatten nested styles with updated parent context
-          const nestedNativeStyles = sassy(value, newKey);
-          Object.assign(nativeStyles, nestedNativeStyles);
-        }
-      } else {
-        if (!nativeStyles[parentKey]) nativeStyles[parentKey] = {};
-        nativeStyles[parentKey][key] = value as string | number;
-      }
+      continue;
     }
+
+    // Assign flat styles and non-objects directly
+    if (!isObject(value)) {
+      assignFlatStyle(nativeStyles, parentKey, key, value);
+      continue;
+    }
+
+    // Assign ignored keys directly
+    if (ignoredKeys.includes(key)) {
+      assignIgnoredKeyStyle(nativeStyles, parentKey, key, value);
+      continue;
+    }
+
+    // Recursively flatten nested styles
+    const newKey = parentKey ? `${parentKey}${capitalize(key)}` : key;
+    const nestedNativeStyles = sassy(value as NestedStyle, newKey);
+    Object.assign(nativeStyles, nestedNativeStyles);
   }
 
   // Apply shared styles within the appropriate nested contexts
   for (const selector in sharedStylesMap) {
     if (!nativeStyles[selector]) nativeStyles[selector] = {};
     Object.assign(nativeStyles[selector], sharedStylesMap[selector]);
-  }
+  };
 
+  // Return the flattened stylesheet
   return nativeStyles;
 }
