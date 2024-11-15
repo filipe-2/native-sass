@@ -9,7 +9,7 @@
 [![runs-with-expo](https://img.shields.io/badge/Runs%20with%20Expo%20Go-4630EB.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000)](https://expo.dev/client)
 </div>
 
-<img width=100% height=100 src="https://capsule-render.vercel.app/api?type=venom&color=cc6699bf&height=200&section=header&text=NativeSass&fontColor=fff&fontSize=50&animation=twinkling" alt="NativeSass"/>
+<img width=100% height=100 src="https://capsule-render.vercel.app/api?type=venom&color=353839&height=200&section=header&text=NativeSass&fontColor=cc6699&fontSize=50&animation=twinkling" alt="NativeSass"/>
 
 ## About
 
