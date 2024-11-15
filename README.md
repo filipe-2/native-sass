@@ -31,6 +31,8 @@ Or use the following if you're using `yarn`:
 yarn add native-sass
 ```
 
+<img width=100% height=50 src="https://capsule-render.vercel.app/api?type=venom&color=cc6699&height=200&section=header" alt="NativeSass"/>
+
 ## Features
 
 ### Nesting
