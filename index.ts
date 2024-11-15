@@ -15,7 +15,7 @@ export function sassy(nestedStyles: NestedStyle, parentKey: string = ''): Native
   } = {};
   
   // Traverse each key-value pair in the nested styles object
-  nestedStyles.forEach((key) => {
+  for (const key in nestedStyles) {
     const value = nestedStyles[key];
     
     // Handle comma-separated keys (shared styles)
@@ -43,7 +43,7 @@ export function sassy(nestedStyles: NestedStyle, parentKey: string = ''): Native
   }
 
   // Apply shared styles within the appropriate nested contexts
-  sharedStylesMap.forEach((selector) => {
+  for (const selector in sharedStylesMap) {
     if (!nativeStyles[selector]) nativeStyles[selector] = {};
     Object.assign(nativeStyles[selector], sharedStylesMap[selector]);
   });
