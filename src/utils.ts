@@ -1,4 +1,4 @@
-import { NestedStyle } from './types';
+import { NestedStyle, NativeStyle } from './types';
 
 
 // List of keys that should not be flattened (compound styles)
@@ -30,27 +30,37 @@ export const handleSharedStyles = (
 
 
 // Checks if a value is an object
-export const isObject = (value: any): boolean => typeof(value) === 'object' && !Array.isArray(value);
+export const isObject = (value: any): boolean => typeof (value) === 'object' && !Array.isArray(value);
 
 
 // Assings styles directly if they're not objects
-export const assignFlatStyle = (nativeStyles: NativeStyle, parentKey: string, key: string, value: string | number) => {
+export const assignFlatStyle = (nativeStyles: NativeStyle, parentKey: string, key: string, value: string | number | NestedStyle) => {
   if (!nativeStyles[parentKey]) nativeStyles[parentKey] = {};
   nativeStyles[parentKey][key] = value;
-}
+};
 
 
 // Assigns ignored keys without flattening
-export const assignIgnoredKeyStyle = (nativeStyles: NativeStyle, parentKey: string, key: string, value: NestedStyle) => {
+export const assignIgnoredKeyStyle = (
+  nativeStyles: NativeStyle,
+  parentKey: string,
+  key: string,
+  value: string | number | NestedStyle
+) => {
   if (!nativeStyles[parentKey]) nativeStyles[parentKey] = {};
   nativeStyles[parentKey][key] = value;
-}
+};
 
 
 // Applies shared styles to each relevant selector in the nativeStyles object
-export const applySharedStyles = (nativeStyles: NativeStyle, sharedStylesMap: { [key: string]: NestedStyle }) => {
+export const applySharedStyles = (
+  nativeStyles: NativeStyle,
+  sharedStylesMap: {
+    [key: string]: NestedStyle;
+  }
+) => {
   for (const selector in sharedStylesMap) {
     if (!nativeStyles[selector]) nativeStyles[selector] = {};
     Object.assign(nativeStyles[selector], sharedStylesMap[selector]);
   }
-}
+};
