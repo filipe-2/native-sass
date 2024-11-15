@@ -1,7 +1,7 @@
 <div align="center">
     <p align="center">
     <img src="./assets/nativesass-banner.png" alt="NativeSass">
-    <img width=100% src="https://capsule-render.vercel.app/api?type=venom&color=cc6699bf&height=200&section=header&text=NativeSass&fontColor=fff&fontAlignY=40&animation=twinkling" alt="NativeSass"/>
+    <img width=100% src="https://capsule-render.vercel.app/api?type=venom&color=cc6699bf&height=175&section=header&text=NativeSass&fontColor=fff&fontSize=50&animation=twinkling" alt="NativeSass"/>
 </p>
     
 [![npm version](https://img.shields.io/npm/v/native-sass)](https://www.npmjs.com/package/native-sass)
@@ -14,7 +14,7 @@
 
 A React Native library that allows you to use Sass- and CSS-like functionalities, like nesting and shared styles. With this library, you can nest and use shared styles to apply properties to multiple style objects at once, without losing the default experience of creating React Native stylesheets.
 
-<img width=100% src="https://capsule-render.vercel.app/api?type=venom&color=cc6699&height=200&section=header" alt="NativeSass"/>
+<img width=100% height=50 src="https://capsule-render.vercel.app/api?type=venom&color=cc6699&height=200&section=header" alt="NativeSass"/>
 
 ## Installation
 
