@@ -165,7 +165,7 @@ const styles = StyleSheet.create(sassy({
 
 We wrap the keys we want to apply the shared styles to with quotes and separate them with commas.
 
-<img width=100% src="https://capsule-render.vercel.app/api?type=venom&color=cc6699&height=200&section=header" alt="NativeSass"/>
+<img width=100% height=50 src="https://capsule-render.vercel.app/api?type=venom&color=cc6699&height=200&section=header" alt="NativeSass"/>
 
 ## Built-in JS functionalities
 
