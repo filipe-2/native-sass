@@ -1,7 +1,7 @@
 <div align="center">
     <p align="center">
     <img src="./assets/nativesass-banner.png" alt="NativeSass">
-    <img width=100% src="https://capsule-render.vercel.app/api?type=venom&color=cc6699bf&height=175&section=header&text=NativeSass&fontColor=fff&fontSize=50&animation=twinkling" alt="NativeSass"/>
+    <img width=100% height=100 src="https://capsule-render.vercel.app/api?type=venom&color=cc6699bf&height=200&section=header&text=NativeSass&fontColor=fff&fontSize=50&animation=twinkling" alt="NativeSass"/>
 </p>
     
 [![npm version](https://img.shields.io/npm/v/native-sass)](https://www.npmjs.com/package/native-sass)
