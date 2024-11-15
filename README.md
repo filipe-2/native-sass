@@ -1,10 +1,9 @@
-<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=cc6699&height=120&section=header"/>
 <div align="center">
-<p align="center">
+    <p align="center">
     <img src="./assets/nativesass-banner.png" alt="NativeSass">
-    <h1 align="center">NativeSass</h1>
+    <img width=100% src="https://capsule-render.vercel.app/api?type=venom&color=cc6699bf&height=200&section=header&text=NativeSass&fontColor=fff&fontAlignY=40&animation=twinkling" alt="NativeSass"/>
 </p>
-
+    
 [![npm version](https://img.shields.io/npm/v/native-sass)](https://www.npmjs.com/package/native-sass)
 [![npm downloads](https://img.shields.io/npm/dw/native-sass)](https://www.npmjs.com/package/native-sass)
 [![Github](https://img.shields.io/github/license/filipe-2/native-sass)](https://github.com/filipe-2/native-sass)
@@ -14,6 +13,8 @@
 ## About
 
 A React Native library that allows you to use Sass- and CSS-like functionalities, like nesting and shared styles. With this library, you can nest and use shared styles to apply properties to multiple style objects at once, without losing the default experience of creating React Native stylesheets.
+
+<img width=100% src="https://capsule-render.vercel.app/api?type=venom&color=cc6699bf&height=200&section=header" alt="NativeSass"/>
 
 ## Installation
 
@@ -164,6 +165,8 @@ const styles = StyleSheet.create(sassy({
 
 We wrap the keys we want to apply the shared styles to with quotes and separate them with commas.
 
+<img width=100% src="https://capsule-render.vercel.app/api?type=venom&color=cc6699bf&height=200&section=header" alt="NativeSass"/>
+
 ## Built-in JS functionalities
 
 Some Sass functionalities, like mixins and maps, can be mimicked using built-in JS capabilities.
@@ -189,4 +192,4 @@ const styles = StyleSheet.create({
   }
 });
 ```
-<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=cc6699&height=120&section=footer"/>
+<img width=100% src="https://capsule-render.vercel.app/api?type=venom&color=cc6699bf&height=200&section=header" alt="NativeSass"/>
