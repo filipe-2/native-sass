@@ -192,4 +192,3 @@ const styles = StyleSheet.create({
   }
 });
 ```
-<img width=100% src="https://capsule-render.vercel.app/api?type=venom&color=cc6699bf&height=200&section=header" alt="NativeSass"/>
