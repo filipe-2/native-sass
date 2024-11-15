@@ -1,7 +1,7 @@
 <div align="center">
 <p align="center">
     <img src="./assets/nativesass-banner.png" alt="NativeSass">
-    <h1 align="center" style="color:red;">NativeSass</h1>
+    <h1 align="center">NativeSass</h1>
 </p>
 
 [![npm version](https://img.shields.io/npm/v/native-sass)](https://www.npmjs.com/package/native-sass)
