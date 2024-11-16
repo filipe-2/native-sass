@@ -2,11 +2,11 @@
     <p align="center">
     <img src="./assets/nativesass-banner.png" alt="NativeSass">
 </p>
-    
-[![npm version](https://img.shields.io/npm/v/native-sass)](https://www.npmjs.com/package/native-sass)
-[![npm downloads](https://img.shields.io/npm/dw/native-sass)](https://www.npmjs.com/package/native-sass)
-[![Github](https://img.shields.io/github/license/filipe-2/native-sass)](https://github.com/filipe-2/native-sass)
-[![runs-with-expo](https://img.shields.io/badge/Runs%20with%20Expo%20Go-4630EB.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000)](https://expo.dev/client)
+
+[![NPM Version](https://img.shields.io/npm/v/native-sass?logo=npm&logoColor=cb3837&label=Version&color=cc6699)](https://npmjs.com/package/native-sass)
+[![NPM Downloads](https://img.shields.io/npm/dw/native-sass?logo=npm&logoColor=cb3837&label=Downloads&color=cc6699)](https://npmjs.com/package/native-sass)
+[![Github](https://img.shields.io/badge/License-MIT-cc6699)](https://github.com/filipe-2/native-sass/blob/main/LICENSE)
+[![runs-with-expo](https://img.shields.io/badge/Runs%20with%20Expo%20Go-cc6699.svg?logo=EXPO&labelColor=f3f3f3&logoColor=000)](https://expo.dev/client)
 </div>
 
 <img width=100% height=100 src="https://capsule-render.vercel.app/api?type=venom&color=353839&height=200&section=header&text=NativeSass&fontColor=cc6699&fontSize=50&animation=twinkling" alt="NativeSass"/>
