@@ -19,7 +19,7 @@ A React Native library that allows you to use Sass- and CSS-like functionalities
 
 ## ⚛️ Installation
 
-To use `native-sass`, just run this command from your terminal if you're using `npm`:
+To use `native-sass` in your React Native project, just run this command from your terminal if you're using `npm`:
 
 ```bash
 npm install native-sass
