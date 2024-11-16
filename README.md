@@ -195,3 +195,18 @@ const styles = StyleSheet.create({
   }
 });
 ```
+
+## 🌟 **Support Us by Starring the Repo!** 🌟
+
+<div>
+  <img align=left width=75 height=75 src="https://www.torquemetals.com/wp-content/uploads/wired-lineal-237-star-rating-morph.gif">
+  <p>
+    If you find this project helpful, inspiring, or just plain awesome, please give it a ⭐!
+  </p>
+  <p>
+    Your support encourages us and helps us keep the project growing more and more. 💖
+  </p>
+</div>
+
+### How to Star:
+1. If you're signed in, click the **Star** button at the top of this page.
