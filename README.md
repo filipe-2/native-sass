@@ -156,7 +156,7 @@ Suppose we have the following stylesheet:
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  // More style rules...
+  // ...
   cards: {
     width: 200,
     minHeight: 200,
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'pink'
   },
-  // More style rules...
+  // ...
 });
 ```
 
@@ -189,7 +189,7 @@ import { StyleSheet } from 'react-native';
 import { sassy } from 'native-sass';
 
 const styles = StyleSheet.create(sassy({
-  // More style rules...
+  // ...
   'cards, card': {
     borderWidth: 2,
     borderColor: 'red',
@@ -210,7 +210,7 @@ const styles = StyleSheet.create(sassy({
     minHeight: 50,
     backgroundColor: 'pink'
   }
-  // More style rules...
+  // ...
 }));
 ```
 
