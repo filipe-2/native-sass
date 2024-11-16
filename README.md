@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-We can recycle this shared styles as follows with the `sassy` function:
+We can recycle these shared styles as follows with the `sassy` function:
 
 ```javascript
 import { StyleSheet } from 'react-native';
