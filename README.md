@@ -37,68 +37,116 @@ yarn add native-sass
 
 ### Nesting
 
-Suppose we have the following StyleSheet:
+Consider the following StyleSheet:
 
-```javascript
+```js
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  // More style rules...
+  // ...
   dialogWrapper: {
-    // dialogWrapper styles
+    padding: 20,
+    backgroundColor: 'white',
+    borderRadius: 8,
+    shadowColor: 'black',
+    shadowOpacity: 0.1,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowRadius: 4,
   },
+
   dialogTitle: {
-    // dialogTitle styles
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 10,
   },
+
   dialogMsg: {
-    // dialogMsg styles
+    fontSize: 16,
+    color: '#666',
+    marginBottom: 20,
   },
+
   dialogActionsBtn: {
-    // dialogActionsBtn styles
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    backgroundColor: '#007BFF',
+    borderRadius: 4,
   },
+
   dialogActionsBtnText: {
-    // dialogActionsBtnText styles
+    fontSize: 14,
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
-  // More style rules...
+  // ...
 });
 ```
 
-This stylesheet has a lot of style objects that we might want to nest. We can do that by using the `sassy` function from `native-sass` as follows:
+This `StyleSheet` defines styles for a dialog component, with separate styles for its wrapper, title, message, and action buttons. However, we might want to nest those style rules for organization, maintainability, and to avoid redundancy (notice that we're repeating the name of yhe components in each object).
 
-```javascript
+To use nesting, we can just pass our custom `StyleSheet` with nested objects to the `sassy` function from `native-sass` as follows:
+
+```js
 import { StyleSheet } from 'react-native';
 import { sassy } from 'native-sass';
 
 const styles = StyleSheet.create(sassy({
-  // More style rules...
+  // ...
   dialog: {
     wrapper: {
-      // dialogWrapper styles
+      padding: 20,
+      backgroundColor: 'white',
+      borderRadius: 8,
+      shadowColor: 'black',
+      shadowOpacity: 0.1,
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowRadius: 4,
     },
-    
+
     title: {
-      // dialogTitle styles
+      fontSize: 18,
+      fontWeight: 'bold',
+      color: '#333',
+      marginBottom: 10,
     },
 
     msg: {
-      // dialogMsg styles
+      fontSize: 16,
+      color: '#666',
+      marginBottom: 20,
     },
 
     actions: {
       btn: {
-        // dialogActionsBtn styles
+        paddingVertical: 10,
+        paddingHorizontal: 15,
+        backgroundColor: '#007BFF',
+        borderRadius: 4,
 
         text: {
-          // dialogActionsBtnText styles
-        }
-      }
-    }
+          fontSize: 14,
+          color: 'white',
+          fontWeight: 'bold',
+          textAlign: 'center',
+        },
+      },
+    },
   },
-  // More style rules...
+  // ...
 }));
 ```
 
-This object passed to `sassy` will be flattened into the object of the previous snippet. The nested keys are capitalized and concatenated with the parent keys, so `dialog.actions.btn.text` becomes `dialogActionsBtnText`. The nested styles are then merged in order to return the object that the `StyleSheet.create()` method expects.
+This object passed to `sassy` will be flattened into the `StyleSheet` of the previous snippet. The nested keys are capitalized and concatenated with the parent keys, so `dialog.actions.btn.text` becomes `dialogActionsBtnText`. The nested styles are then merged in order to return the object that the `StyleSheet.create()` method expects.
+
+Notice that the amount of nesting is up to you to decide, while some degree of nesting helps organizing styles, too much nesting may cause confusion.
 
 ### Shared values
 
