@@ -196,6 +196,8 @@ const styles = StyleSheet.create({
 });
 ```
 
+<img width=100% height=50 src="https://capsule-render.vercel.app/api?type=venom&color=cc6699&height=200&section=header" alt="NativeSass"/>
+
 ## 🌟 **Support Us by Starring the Repo!** 🌟
 
 <div>
