@@ -1,0 +1,10 @@
+{
+  "compiler options": {
+    "esModuleInterop": true,
+    "jsx": "react",
+    "module": "esnext",
+    "removeComments": true,
+    "strict": true,
+    "target": "esnext"
+  }
+}
