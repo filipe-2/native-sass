@@ -1,4 +1,4 @@
-import { Transform, NestedStyle, NativeStyle, ShorthandSpacingKey } from './types';
+import { Transform, NestedStyle, NativeStyle } from './types';
 
 /**
  * List of keys that should not be flattened (compound styles).
@@ -9,16 +9,6 @@ export const ignoredKeys: string[] = ['shadowOffset'];
  * List of special shorthand keys.
  */
 export const specialShorthandKeys: string[] = ['inset', 'margin', 'padding', 'gap'];
-
-/**
- * Object containing the shorthand key handlers.
- */
-export const shorthandHandlers: { [key: string]: (key: string, value: number | number[]) => NativeStyle } = {
-  inset: handleShorthandInset,
-  margin: handleShorthandSpacing,
-  padding: handleShorthandSpacing,
-  gap: handleGap,
-};
 
 /**
  * Capitalizes the first letter of each key segment.
@@ -95,7 +85,7 @@ export const applySharedStyles = (
 /**
  * Handles shorthand inset key.
  */
-const handleShorthandInset = (_key: string, value: number | number[]): NativeStyle => {
+const handleShorthandInset = (_key: string, value: NestedStyle): NestedStyle => {
   if (typeof value === 'number') {
     return { top: value, right: value, bottom: value, left: value };
   }
@@ -116,12 +106,14 @@ const handleShorthandInset = (_key: string, value: number | number[]): NativeSty
         throw new Error(`Invalid value for inset: ${JSON.stringify(value)}`);
     }
   }
+
+  throw new Error(`Invalid value for inset: Expected a number or an array of numbers, but got ${typeof value}. Value: ${JSON.stringify(value)}`);
 };
 
 /**
  * Handles special shorthand spacing keys.
  */
-const handleShorthandSpacing = (key: ShorthandSpacingKey, value: number | number[]): NativeStyle => {
+const handleShorthandSpacing = (key: string, value: NestedStyle): NestedStyle => {
   if (typeof value === 'number') {
     return {
       [`${key}Vertical`]: value,
@@ -131,12 +123,12 @@ const handleShorthandSpacing = (key: ShorthandSpacingKey, value: number | number
 
   if (Array.isArray(value)) {
     const [top, right, bottom, left] = value;
-    
+
     switch (value.length) {
       case 1:
         return { [key]: top };
       case 2:
-        return { 
+        return {
           [`${key}Vertical`]: top,
           [`${key}Horizontal`]: right,
         };
@@ -154,14 +146,16 @@ const handleShorthandSpacing = (key: ShorthandSpacingKey, value: number | number
           [`${key}Left`]: left,
         };
       default:
-        throw new Error(`Invalid value for ${key}: ${JSON.stringify(value)}`);
+        throw new Error(`Invalid ${key} array length: Expected 1, 2, 3, or 4, but got ${value.length}. Value: ${JSON.stringify(value)}`);
     }
   }
+
+  throw new Error(`Invalid value for ${key}: Expected a number or an array of numbers, but got ${typeof value}. Value: ${JSON.stringify(value)}`);
 };
 
-const handleShorthandGap = (_key: string, value: number | number[]): NativeStyle => {
+const handleShorthandGap = (_key: string, value: NestedStyle): NestedStyle => {
   if (typeof value === 'number') {
-    return { gap: value }
+    return { gap: value };
   };
 
   if (Array.isArray(value)) {
@@ -171,7 +165,7 @@ const handleShorthandGap = (_key: string, value: number | number[]): NativeStyle
       case 1:
         return { gap: row };
       case 2:
-        return { 
+        return {
           rowGap: row,
           columnGap: column,
         };
@@ -179,4 +173,16 @@ const handleShorthandGap = (_key: string, value: number | number[]): NativeStyle
         throw new Error(`Invalid value for gap: ${JSON.stringify(value)}`);
     }
   }
-}
+
+  throw new Error(`Invalid value for gap: Expected a number or an array of numbers, but got ${typeof value}. Value: ${JSON.stringify(value)}`);
+};
+
+/**
+ * Object containing the shorthand key handlers.
+ */
+export const shorthandHandlers: { [key: string]: (key: string, value: NestedStyle) => NestedStyle; } = {
+  inset: handleShorthandInset,
+  margin: handleShorthandSpacing,
+  padding: handleShorthandSpacing,
+  gap: handleShorthandGap,
+};

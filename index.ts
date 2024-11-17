@@ -29,7 +29,7 @@ export function sassy(nestedStyles: NestedStyle, parentKey: string = ''): Native
     // Check for special shorthand keys
     if (specialShorthandKeys.includes(key)) {
       const handler = shorthandHandlers[key];
-      Object.assign(nativeStyles, handler(key, value));
+      Object.assign(nativeStyles, handler(key, value as NestedStyle));
       continue;
     }
 
