@@ -14,6 +14,7 @@ export const specialShorthandKeys: string[] = ['inset', 'margin', 'padding', 'ga
  * Object containing the shorthand key handlers.
  */
 const shorthandHandlers: { [key: string]: (key: string, value: number | number[]) => NativeStyle } = {
+  inset: handleShorthandInset,
   margin: handleShorthandSpacing,
   padding: handleShorthandSpacing,
   gap: handleGap,
@@ -88,6 +89,32 @@ export const applySharedStyles = (
   for (const selector in sharedStylesMap) {
     if (!nativeStyles[selector]) nativeStyles[selector] = {};
     Object.assign(nativeStyles[selector], sharedStylesMap[selector]);
+  }
+};
+
+/**
+ * Handles shorthand inset key.
+ */
+export const handleShorthandInset = (_key: string, value: number | number[]): NativeStyle => {
+  if (typeof value === 'number') {
+    return { top: value, right: value, bottom: value, left: value };
+  }
+
+  if (Array.isArray(value)) {
+    const [top, right, bottom, left] = value;
+
+    switch (value.length) {
+      case 1:
+        return { top, right: top, bottom: top, left: top };
+      case 2:
+        return { top, right, bottom: top, left: right };
+      case 3:
+        return { top, right, bottom, left: right };
+      case 4:
+        return { top, right, bottom, left };
+      default:
+        throw new Error(`Invalid value for inset: ${JSON.stringify(value)}`);
+    }
   }
 };
 
