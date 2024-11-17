@@ -11,6 +11,15 @@ export const ignoredKeys: string[] = ['shadowOffset'];
 export const specialShorthandKeys: string[] = ['inset', 'margin', 'padding', 'gap'];
 
 /**
+ * Object containing the shorthand key handlers.
+ */
+const shorthandHandlers: { [key: string]: (key: string, value: number | number[]) => NativeStyle } = {
+  margin: handleShorthandSpacing,
+  padding: handleShorthandSpacing,
+  gap: handleGap,
+};
+
+/**
  * Capitalizes the first letter of each key segment.
  */
 export const capitalize = (str: string): string => str.charAt(0).toUpperCase() + str.slice(1);
@@ -85,7 +94,7 @@ export const applySharedStyles = (
 /**
  * Handles special shorthand spacing keys.
  */
-export const handleShorthandSpacing = (key: ShorthandSpacingKey, value: number | number[]): NestedStyle => {
+export const handleShorthandSpacing = (key: ShorthandSpacingKey, value: number | number[]): NativeStyle => {
   if (typeof value === 'number') {
     return {
       [`${key}Vertical`]: value,
@@ -122,3 +131,25 @@ export const handleShorthandSpacing = (key: ShorthandSpacingKey, value: number |
     }
   }
 };
+
+export const handleShorthandGap = (_key: string, value: number | number[]): NativeStyle => {
+  if (typeof value === 'number') {
+    return { gap: value }
+  };
+
+  if (Array.isArray(value)) {
+    const [row, column] = value;
+
+    switch (value.length) {
+      case 1:
+        return { gap: row };
+      case 2:
+        return { 
+          rowGap: row,
+          columnGap: column,
+        };
+      default:
+        throw new Error(`Invalid value for gap: ${JSON.stringify(value)}`);
+    }
+  }
+}
