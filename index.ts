@@ -2,6 +2,7 @@ import { NativeStyle, NestedStyle } from './src/types';
 import {
   ignoredKeys,
   specialShorthandKeys,
+  
   capitalize,
   handleSharedStyles,
   isObject,
@@ -22,6 +23,13 @@ export function sassy(nestedStyles: NestedStyle, parentKey: string = ''): Native
     // Handle comma-separated keys (shared styles)
     if (key.includes(',')) {
       handleSharedStyles(key, parentKey, value, sharedStylesMap);
+      continue;
+    }
+
+    // Check for special shorthand keys
+    if (specialShorthandKeys.includes(key)) {
+      const handler = shorthandHandlers[key];
+      Object.assign(nativeStyles, handler(key, value));
       continue;
     }
 
