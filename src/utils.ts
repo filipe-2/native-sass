@@ -6,6 +6,11 @@ import { Transform, NestedStyle, NativeStyle } from './types';
 export const ignoredKeys: string[] = ['shadowOffset'];
 
 /**
+ * List of special shorthand keys.
+*/
+export const specialShorthandKeys: string[] = ['inset', 'margin', 'padding', 'gap'];
+
+/**
  * Capitalizes the first letter of each key segment.
 */
 export const capitalize = (str: string): string => str.charAt(0).toUpperCase() + str.slice(1);
@@ -74,5 +79,46 @@ export const applySharedStyles = (
   for (const selector in sharedStylesMap) {
     if (!nativeStyles[selector]) nativeStyles[selector] = {};
     Object.assign(nativeStyles[selector], sharedStylesMap[selector]);
+  }
+};
+
+/**
+ * Handles special shorthand spacing keys.
+*/
+export const handleShorthandSpacing = (key: string, value: number | number[]): NestedStyle => {
+  if (typeof value === 'number') {
+    return {
+      [`${key}Vertical`]: value,
+      [`${key}Horizontal`]: value,
+    };
+  }
+
+  if (Array.isArray(value)) {
+    const [top, right, bottom, left] = value;
+    
+    switch (value.length) {
+      case 1:
+        return { [key]: top };
+      case 2:
+        return { 
+          [`${key}Vertical`]: top,
+          [`${key}Horizontal`]: right,
+        };
+      case 3:
+        return {
+          [`${key}Top`]: top,
+          [`${key}Horizontal`]: right,
+          [`${key}Bottom`]: bottom,
+        };
+      case 4:
+        return {
+          [`${key}Top`]: top,
+          [`${key}Right`]: right,
+          [`${key}Bottom`]: bottom,
+          [`${key}Left`]: left,
+        };
+      default:
+        throw new Error(`Invalid ${key} value: ${value}`);
+    }
   }
 };
