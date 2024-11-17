@@ -52,3 +52,8 @@ export type NestedStyle = {
 export type NativeStyle = {
   [key: string]: { [property: string]: string | number | Transform | NestedStyle; };
 };
+
+/**
+ * A type representing a shorthand spacing key, like 'margin' and 'paddin'.
+*/
+export type ShorthandSpacingKey = 'margin' | 'padding';
