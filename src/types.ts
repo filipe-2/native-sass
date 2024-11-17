@@ -10,7 +10,7 @@
  * 5. Perspective (`perspective`), expecting a numeric value.
  * 
  * This type allows for modular transformation objects that can be passed as an array to the `transform` property.
-*/
+ */
 export type Transform = {
   rotate?: string;
   rotateX?: string;
