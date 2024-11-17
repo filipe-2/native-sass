@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/filipe-2/native-sass.git"
+    "url": "git+https://github.com/nativesass/native-sass.git"
   },
   "keywords": [
     "sass",
@@ -23,7 +23,7 @@
   "author": "Filipe Ramos",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/filipe-2/native-sass/issues"
+    "url": "https://github.com/nativesass/native-sass/issues"
   },
-  "homepage": "https://github.com/filipe-2/native-sass#readme"
+  "homepage": "https://github.com/nativesass/native-sass#readme"
 }
