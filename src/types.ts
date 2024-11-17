@@ -55,5 +55,5 @@ export type NativeStyle = {
 
 /**
  * A type representing a shorthand spacing key, like 'margin' and 'paddin'.
-*/
+ */
 export type ShorthandSpacingKey = 'margin' | 'padding';
