@@ -13,7 +13,7 @@ export const specialShorthandKeys: string[] = ['inset', 'margin', 'padding', 'ga
 /**
  * Object containing the shorthand key handlers.
  */
-const shorthandHandlers: { [key: string]: (key: string, value: number | number[]) => NativeStyle } = {
+export const shorthandHandlers: { [key: string]: (key: string, value: number | number[]) => NativeStyle } = {
   inset: handleShorthandInset,
   margin: handleShorthandSpacing,
   padding: handleShorthandSpacing,
@@ -95,7 +95,7 @@ export const applySharedStyles = (
 /**
  * Handles shorthand inset key.
  */
-export const handleShorthandInset = (_key: string, value: number | number[]): NativeStyle => {
+const handleShorthandInset = (_key: string, value: number | number[]): NativeStyle => {
   if (typeof value === 'number') {
     return { top: value, right: value, bottom: value, left: value };
   }
@@ -121,7 +121,7 @@ export const handleShorthandInset = (_key: string, value: number | number[]): Na
 /**
  * Handles special shorthand spacing keys.
  */
-export const handleShorthandSpacing = (key: ShorthandSpacingKey, value: number | number[]): NativeStyle => {
+const handleShorthandSpacing = (key: ShorthandSpacingKey, value: number | number[]): NativeStyle => {
   if (typeof value === 'number') {
     return {
       [`${key}Vertical`]: value,
@@ -159,7 +159,7 @@ export const handleShorthandSpacing = (key: ShorthandSpacingKey, value: number |
   }
 };
 
-export const handleShorthandGap = (_key: string, value: number | number[]): NativeStyle => {
+const handleShorthandGap = (_key: string, value: number | number[]): NativeStyle => {
   if (typeof value === 'number') {
     return { gap: value }
   };
