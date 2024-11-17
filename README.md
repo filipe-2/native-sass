@@ -13,7 +13,7 @@
 
 ## ⚛️ About
 
-A React Native library that allows you to use Sass- and CSS-like functionalities, like nesting and shared styles. With this library, you can nest and use shared styles to apply properties to multiple style objects at once, without losing the default experience of creating React Native stylesheets.
+A React Native library that lets you create StyleSheets with Sass- and CSS-like functionality, like nesting and shared styles. With this library, you can nest styles, use shared styles to apply properties to multiple style objects at once, and much more, without losing the default experience of creating StyleSheets the React Native way.
 
 <img width=100% height=50 src="https://capsule-render.vercel.app/api?type=venom&color=cc6699&height=200&section=header" alt="NativeSass"/>
 
