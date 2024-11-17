@@ -2,7 +2,6 @@ import { NativeStyle, NestedStyle } from './src/types';
 import {
   ignoredKeys,
   specialShorthandKeys,
-  
   capitalize,
   handleSharedStyles,
   isObject,
