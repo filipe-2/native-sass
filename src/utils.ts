@@ -2,22 +2,22 @@ import { Transform, NestedStyle, NativeStyle, ShorthandSpacingKey } from './type
 
 /**
  * List of keys that should not be flattened (compound styles).
-*/
+ */
 export const ignoredKeys: string[] = ['shadowOffset'];
 
 /**
  * List of special shorthand keys.
-*/
+ */
 export const specialShorthandKeys: string[] = ['inset', 'margin', 'padding', 'gap'];
 
 /**
  * Capitalizes the first letter of each key segment.
-*/
+ */
 export const capitalize = (str: string): string => str.charAt(0).toUpperCase() + str.slice(1);
 
 /**
  * Handles shared styles.
-*/
+ */
 export const handleSharedStyles = (
   key: string,
   parentKey: string,
@@ -38,12 +38,12 @@ export const handleSharedStyles = (
 
 /**
  * Checks if a value is an object.
-*/
+ */
 export const isObject = (value: any): boolean => typeof (value) === 'object' && !Array.isArray(value);
 
 /**
  * Assigns ignored keys without flattening.
-*/
+ */
 export const assignFlatStyle = (
   nativeStyles: NativeStyle,
   parentKey: string,
@@ -56,7 +56,7 @@ export const assignFlatStyle = (
 
 /**
  * Assigns ignored keys without flattening.
-*/
+ */
 export const assignIgnoredKeyStyle = (
   nativeStyles: NativeStyle,
   parentKey: string,
@@ -69,7 +69,7 @@ export const assignIgnoredKeyStyle = (
 
 /**
  * Applies shared styles to each relevant selector in the nativeStyles object.
-*/
+ */
 export const applySharedStyles = (
   nativeStyles: NativeStyle,
   sharedStylesMap: {
@@ -84,7 +84,7 @@ export const applySharedStyles = (
 
 /**
  * Handles special shorthand spacing keys.
-*/
+ */
 export const handleShorthandSpacing = (key: ShorthandSpacingKey, value: number | number[]): NestedStyle => {
   if (typeof value === 'number') {
     return {
