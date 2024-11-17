@@ -1,4 +1,4 @@
-import { Transform, NestedStyle, NativeStyle } from './types';
+import { Transform, NestedStyle, NativeStyle, ShorthandSpacingKey } from './types';
 
 /**
  * List of keys that should not be flattened (compound styles).
@@ -85,7 +85,7 @@ export const applySharedStyles = (
 /**
  * Handles special shorthand spacing keys.
 */
-export const handleShorthandSpacing = (key: string, value: number | number[]): NestedStyle => {
+export const handleShorthandSpacing = (key: ShorthandSpacingKey, value: number | number[]): NestedStyle => {
   if (typeof value === 'number') {
     return {
       [`${key}Vertical`]: value,
@@ -118,7 +118,7 @@ export const handleShorthandSpacing = (key: string, value: number | number[]): N
           [`${key}Left`]: left,
         };
       default:
-        throw new Error(`Invalid ${key} value: ${value}`);
+        throw new Error(`Invalid value for ${key}: ${JSON.stringify(value)}`);
     }
   }
 };
