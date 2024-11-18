@@ -37,7 +37,7 @@ export type Transform = {
  * This is useful for scenarios where styles have to be deeply nested.
  */
 export type NestedStyle = {
-  [key: string]: string | number | Transform | NestedStyle;
+  [key: string]: string | number | number[] | Transform | NestedStyle;
 };
 
 /**
@@ -50,5 +50,5 @@ export type NestedStyle = {
  * and the value is either a simple property or another `NestedStyle`, which accounts for style objects that shouldn't be denested/flattened, like `shadowOffset`.
  */
 export type NativeStyle = {
-  [key: string]: { [property: string]: string | number | Transform | NestedStyle; };
+  [key: string]: { [property: string]: string | number | number[] | Transform | NestedStyle; };
 };

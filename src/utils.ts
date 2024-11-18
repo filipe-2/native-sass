@@ -21,7 +21,7 @@ export const capitalize = (str: string): string => str.charAt(0).toUpperCase() +
 export const handleSharedStyles = (
   key: string,
   parentKey: string,
-  value: string | number | Transform | NestedStyle,
+  value: string | number | number[] | Transform | NestedStyle,
   map: { [key: string]: NestedStyle; }
 ) => {
   // Handle shared styles for multiple selectors within the current parentKey context
@@ -32,7 +32,14 @@ export const handleSharedStyles = (
 
     if (!map[scopedKey]) map[scopedKey] = {};
 
-    Object.assign(map[scopedKey], value);
+    for (const prop in value as any) {
+      if (specialShorthandKeys.includes(prop)) {
+        const handler = shorthandHandlers[prop];
+        Object.assign(map[scopedKey], handler(prop, value[prop] as NestedStyle));
+      } else {
+        map[scopedKey][prop] = value[prop];
+      }
+    }
   });
 };
 
@@ -48,7 +55,7 @@ export const assignFlatStyle = (
   nativeStyles: NativeStyle,
   parentKey: string,
   key: string,
-  value: string | number | Transform | NestedStyle
+  value: string | number | number[] | Transform | NestedStyle
 ) => {
   if (!nativeStyles[parentKey]) nativeStyles[parentKey] = {};
   nativeStyles[parentKey][key] = value;
@@ -61,7 +68,7 @@ export const assignIgnoredKeyStyle = (
   nativeStyles: NativeStyle,
   parentKey: string,
   key: string,
-  value: string | number | Transform | NestedStyle
+  value: string | number | number[] | Transform | NestedStyle
 ) => {
   if (!nativeStyles[parentKey]) nativeStyles[parentKey] = {};
   nativeStyles[parentKey][key] = value;
