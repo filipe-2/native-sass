@@ -1,4 +1,13 @@
-import { DimensionValue, FlexStyle, ShadowStyleIOS, TransformsStyle, ViewStyle} from 'react-native';
+import {
+  DimensionValue,
+  FlexStyle,
+  ImageStyle,
+  ShadowStyleIOS,
+  TransformsStyle,
+  TextStyleAndroid,
+  TextStyleIOS,
+  ViewStyle,
+} from 'react-native';
 
 type DimensionValueArray = [
   DimensionValue | undefined, ...(DimensionValue | undefined)[]
@@ -16,6 +25,22 @@ interface SassyFlexStyle extends FlexStyle {
 }
 
 interface SassyViewStyle extends SassyFlexStyle, ShadowStyleIOS, TransformsStyle, ReducedViewStyle {}
+
+type ReducedTextStyleIOS = Omit<TextStyleIOS, keyof ViewStyle>;
+
+interface SassyTextStyleIOS extends SassyViewStyle, ReducedTextStyleIOS {};
+
+type ReducedTextStyleAndroid = Omit<TextStyleAndroid, keyof ViewStyle>;
+
+interface SassyTextStyleAndroid extends SassyViewStyle, ReducedTextStyleAndroid {};
+
+type ReducedTextStyle = Omit<TextStyle, keyof TextStyleIOS, keyof TextStyleAndroid, keyof ViewStyle>;
+
+interface SassyTextStyle extends SassyTextStyleIOS, SassyTextStyleAndroid, SassyViewStyle, ReducedTextStyle {};
+
+type ReducedImageStyle = Omit<ImageStyle, keyof FlexStyle, keyof ShadowStyleIOS, keyof TransformsStyle>;
+
+interface SassyImageStyle extends SassyFlexStyle, ShadowStyleIOS, TransformsStyle, ReducedImageStyle {};
 
 /**
  * A type representing transformation properties that can be applied within the `transform` style property.
