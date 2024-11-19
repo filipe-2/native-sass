@@ -15,7 +15,7 @@ interface SassyFlexStyle extends FlexStyle {
   gap?: number | string | GapValueArray | undefined;
 }
 
-interface SassyViewStyle extends SassyFlexStyle, ShadowStyleIOS, TransformsStyles, ReducedViewStyle {}
+interface SassyViewStyle extends SassyFlexStyle, ShadowStyleIOS, TransformsStyle, ReducedViewStyle {}
 
 /**
  * A type representing transformation properties that can be applied within the `transform` style property.
