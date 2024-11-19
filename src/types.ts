@@ -14,7 +14,7 @@ type DimensionValueArray = [
   DimensionValue | undefined, ...(DimensionValue | undefined)[]
 ] & { length: 1 | 2 | 3 | 4 };
 
-type GapValueArray = [number | string, number | string?]
+type GapValueArray = [number | string, number | string?];
 
 type ReducedViewStyle = Omit<ViewStyle, keyof SassyFlexStyle | keyof ShadowStyleIOS | keyof TransformsStyle>;
 
@@ -29,71 +29,24 @@ interface SassyViewStyle extends SassyFlexStyle, ShadowStyleIOS, TransformsStyle
 
 type ReducedTextStyleIOS = Omit<TextStyleIOS, keyof ViewStyle>;
 
-interface SassyTextStyleIOS extends SassyViewStyle, ReducedTextStyleIOS {};
+interface SassyTextStyleIOS extends SassyViewStyle, ReducedTextStyleIOS {}
 
 type ReducedTextStyleAndroid = Omit<TextStyleAndroid, keyof ViewStyle>;
 
-interface SassyTextStyleAndroid extends SassyViewStyle, ReducedTextStyleAndroid {};
+interface SassyTextStyleAndroid extends SassyViewStyle, ReducedTextStyleAndroid {}
 
 type ReducedTextStyle = Omit<TextStyle, keyof TextStyleIOS, keyof TextStyleAndroid, keyof ViewStyle>;
 
-interface SassyTextStyle extends SassyTextStyleIOS, SassyTextStyleAndroid, SassyViewStyle, ReducedTextStyle {};
+interface SassyTextStyle extends SassyTextStyleIOS, SassyTextStyleAndroid, SassyViewStyle, ReducedTextStyle {}
 
 type ReducedImageStyle = Omit<ImageStyle, keyof FlexStyle, keyof ShadowStyleIOS, keyof TransformsStyle>;
 
-interface SassyImageStyle extends SassyFlexStyle, ShadowStyleIOS, TransformsStyle, ReducedImageStyle {};
+interface SassyImageStyle extends SassyFlexStyle, ShadowStyleIOS, TransformsStyle, ReducedImageStyle {}
 
-/**
- * A type representing transformation properties that can be applied within the `transform` style property.
- * Each transformation property is represented as an object with a single key-value pair.
- *
- * Transformation properties include:
- * 1. Rotations (e.g., `rotate`, `rotateX`, `rotateY`, `rotateZ`), expecting a string with units like 'deg' or 'rad'.
- * 2. Scaling (e.g., `scale`, `scaleX`, `scaleY`), expecting a numeric value.
- * 3. Translation (e.g., `translateX`, `translateY`), expecting a numeric value.
- * 4. Skewing (e.g., `skewX`, `skewY`), expecting a string with units like 'deg'.
- * 5. Perspective (`perspective`), expecting a numeric value.
- *
- * This type allows for modular transformation objects that can be passed as an array to the `transform` property.
- */
-export type Transform = {
-  rotate?: string;
-  rotateX?: string;
-  rotateY?: string;
-  rotateZ?: string;
-  scale?: number;
-  scaleX?: number;
-  scaleY?: number;
-  translateX?: number;
-  translateY?: number;
-  skewX?: string;
-  skewY?: string;
-  perspective?: number;
-};
+export interface NativeStyle {
+  [key: string]: ViewStyle | TextStyle | ImageStyle;
+}
 
-/**
- * A type representing a style object that can contain other style objects nested within it.
- *
- * It allows each key to have a value that is either:
- * 1. A string (e.g., a value like 'red', 'center')
- * 2. A number (e.g., a numeric value like 10, 0.5, etc.)
- * 3. Another `NestedStyle`, allowing the style to be nested further.
- *
- * This is useful for scenarios where styles have to be deeply nested.
- */
-export type NestedStyle = {
-  [key: string]: string | number | number[] | Transform | NestedStyle;
-};
-
-/**
- * A type representing the default style object that is expected by the `StyleSheet.create()` method.
- *
- * This allows for more complex style objects, where styles can be organized in
- * a hierarchical way.
- *
- * The key in this type can represent a compound or top-level style (e.g., 'container', 'button', etc.)
- * and the value is either a simple property or another `NestedStyle`, which accounts for style objects that shouldn't be denested/flattened, like `shadowOffset`.
- */
-export type NativeStyle = {
-  [key: string]: { [property: string]: string | number | number[] | Transform | NestedStyle; };
-};
+export interface NestedStyle {
+  [key: string]: SassyViewStyle | SassyTextStyle | SassyImageStyle | NestedStyle;
+}
