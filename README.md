@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-This `StyleSheet` defines styles for a dialog component, with separate styles for its wrapper, title, message, and action buttons. However, we might want to nest those style rules for organization, maintainability, and to avoid redundancy (notice that we're repeating the name of yhe components in each object).
+This `StyleSheet` defines styles for a dialog component, with separate styles for its wrapper, title, message, and action buttons. However, we might want to nest those style rules for organization, maintainability, and to avoid redundancy (notice that we're repeating the name of the component in each object).
 
 To use nesting, we can just pass our custom `StyleSheet` with nested objects to the `sassy` function from `native-sass` as follows:
 
