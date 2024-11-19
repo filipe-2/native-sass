@@ -1,4 +1,10 @@
-import { Transform, NestedStyle, NativeStyle } from './types';
+import {
+  NativeStyle,
+  NestedStyle,
+  SassyImageStyle,
+  SassyTextStyle,
+  SassyViewStyle,
+} from './types';
 
 /**
  * List of keys that should not be flattened (compound styles).
