@@ -1,3 +1,22 @@
+import { DimensionValue, FlexStyle, ShadowStyleIOS, TransformsStyle, ViewStyle} from 'react-native';
+
+type DimensionValueArray = [
+  DimensionValue | undefined, ...(DimensionValue | undefined)[]
+] & { length: 1 | 2 | 3 | 4 };
+
+type GapValueArray = [number | string, number | string?]
+
+type ReducedViewStyle = Omit<ViewStyle, keyof SassyFlexStyle | keyof ShadowStyleIOS | keyof TransformsStyle>;
+
+interface SassyFlexStyle extends FlexStyle {
+  inset?: DimensionValue | DimensionValueArray | undefined;
+  margin?: DimensionValue | DimensionValueArray | undefined;
+  padding?: DimensionValue | DimensionValueArray | undefined;
+  gap?: number | string | GapValueArray | undefined;
+}
+
+interface SassyViewStyle extends SassyFlexStyle, ShadowStyleIOS, TransformsStyles, ReducedViewStyle {}
+
 /**
  * A type representing transformation properties that can be applied within the `transform` style property.
  * Each transformation property is represented as an object with a single key-value pair.
