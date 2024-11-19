@@ -4,6 +4,7 @@ import {
   ImageStyle,
   ShadowStyleIOS,
   TransformsStyle,
+  TextStyle,
   TextStyleAndroid,
   TextStyleIOS,
   ViewStyle,
