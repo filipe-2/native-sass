@@ -1,6 +1,6 @@
 {
   "name": "native-sass",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A React Native library that lets you create StyleSheets with Sass- and CSS-like functionality, without losing the default experience of creating them the React Native way.",
   "main": "index.ts",
   "scripts": {
@@ -12,6 +12,7 @@
   },
   "keywords": [
     "sass",
+    "scss",
     "react",
     "react-native",
     "native-sass",
@@ -25,5 +26,12 @@
   "bugs": {
     "url": "https://github.com/nativesass/nativesass/issues"
   },
-  "homepage": "https://github.com/nativesass/nativesass#readme"
+  "homepage": "https://github.com/nativesass/nativesass#readme",
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-native": "^0.73.0",
+    "react": "^18.3.1",
+    "react-native": "^0.76.2",
+    "typescript": "^5.6.3"
+  }
 }
