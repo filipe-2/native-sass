@@ -32,6 +32,8 @@ yarn add native-sass
 
 ## Features
 
+This section covers features included in this library, together with code snippets to exemplify. A separate documentation website will be available in the future.
+
 ### Nesting
 
 Consider the following StyleSheet:
