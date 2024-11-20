@@ -250,7 +250,7 @@ The following shorthand properties are available:
      - Single value: `gap: 10;` applies 10px for both row and column gaps.
      - Two values: `gap: [10, 20];` applies 10px for row gap and 20px for column gap.
 
-     The values in `gap` can be either a `number` or `string`.
+     `gap` expects a number or an array of at least one and at most two numbers.
 
 Here's a concrete example of how you can use the shorthand properties in your project:
 
