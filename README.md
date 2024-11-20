@@ -248,6 +248,6 @@ const styles = StyleSheet.create({
   </p>
   <p>
     Your support encourages us and helps us keep the project growing more and more. 💖<br><br>
-    If you're signed in, click the <strong>Star</strong> button at the top of this page.
+    To star the repo, just click the <strong>Star</strong> button at the top of this page.
   </p>
 </div>
