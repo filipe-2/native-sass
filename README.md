@@ -32,7 +32,7 @@ yarn add native-sass
 
 ## Features
 
-### ▶ Nesting
+### Nesting
 
 Consider the following StyleSheet:
 
@@ -145,7 +145,7 @@ This object passed to `sassy` will be flattened into the `StyleSheet` of the pre
 
 Notice that the amount of nesting is up to you to decide, while some degree of nesting helps organizing styles, too much nesting may cause confusion.
 
-### ▶ Shared values
+### Shared values
 
 Suppose we have the following stylesheet:
 
@@ -217,7 +217,7 @@ We wrap the keys we want to apply the shared styles to with quotes and separate 
 
 Some Sass functionalities, like mixins and maps, can be mimicked using built-in JS capabilities.
 
-### ▶ Mixins
+### Mixins
 
 Mixins can be applied to a style object using the built-in JavaScript spread operator `...`, so no need to use `sassy` (unless you're using another feature of this library). Example:
 
