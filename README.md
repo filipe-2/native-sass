@@ -219,7 +219,7 @@ Some Sass functionalities, like mixins and maps, can be mimicked using built-in 
 
 ### ▶ Mixins
 
-Mixins can be applied to a style object using the built-in JavaScript spread operator `...`, so no need to use `sassy` (unless nesting or shared styles are present). Example:
+Mixins can be applied to a style object using the built-in JavaScript spread operator `...`, so no need to use `sassy` (unless you're using another feature of this library). Example:
 
 ```javascript
 import { StyleSheet } from 'react-native';
