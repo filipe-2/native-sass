@@ -1,9 +1,8 @@
 <div align="center">
     <img src="./assets/nativesass-banner.png" alt="NativeSass">
     <h1>NativeSass</h1>
-    <p>
-        <strong>Syntactically Awesome StyleSheets the Native Way</strong>
-    </p>
+    <p><strong>Syntactically Awesome StyleSheets the Native Way</strong><br>
+    Use Sass styling features with React Native</p>
 
 [![NPM Version](https://img.shields.io/npm/v/native-sass?logo=npm&logoColor=cb3837&label=Version&color=cc6699)](https://npmjs.com/package/native-sass)
 [![NPM Downloads](https://img.shields.io/npm/dw/native-sass?logo=npm&logoColor=cb3837&label=Downloads&color=cc6699)](https://npmjs.com/package/native-sass)
