@@ -1,4 +1,4 @@
-import { NativeStyle, NestedStyle } from './src/types';
+import { NestedStyle } from './src/types';
 import {
   ignoredKeys,
   specialShorthandKeys,
@@ -10,8 +10,11 @@ import {
   assignIgnoredKeyStyle
 } from './src/utils';
 
-export function sassy(nestedStyles: NestedStyle, parentKey: string = ''): NativeStyle {
-  const nativeStyles: NativeStyle = {};
+export function sassy<T extends NestedStyle>(
+  nestedStyles: T,
+  parentKey: string = ''
+): Record<string, any> {
+  const nativeStyles: Record<string, any> = {};
   const sharedStylesMap: {
     [key: string]: NestedStyle;
   } = {};

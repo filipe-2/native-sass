@@ -1,4 +1,10 @@
-import { Transform, NestedStyle, NativeStyle } from './types';
+import {
+  NativeStyle,
+  NestedStyle,
+  SassyImageStyle,
+  SassyTextStyle,
+  SassyViewStyle,
+} from './types.d';
 
 /**
  * List of keys that should not be flattened (compound styles).
@@ -21,7 +27,7 @@ export const capitalize = (str: string): string => str.charAt(0).toUpperCase() +
 export const handleSharedStyles = (
   key: string,
   parentKey: string,
-  value: string | number | number[] | Transform | NestedStyle,
+  value: SassyViewStyle | SassyTextStyle | SassyImageStyle | NestedStyle,
   map: { [key: string]: NestedStyle; }
 ) => {
   // Handle shared styles for multiple selectors within the current parentKey context
@@ -55,7 +61,7 @@ export const assignFlatStyle = (
   nativeStyles: NativeStyle,
   parentKey: string,
   key: string,
-  value: string | number | number[] | Transform | NestedStyle
+  value: SassyViewStyle | SassyTextStyle | SassyImageStyle | NestedStyle,
 ) => {
   if (!nativeStyles[parentKey]) nativeStyles[parentKey] = {};
   nativeStyles[parentKey][key] = value;
@@ -68,7 +74,7 @@ export const assignIgnoredKeyStyle = (
   nativeStyles: NativeStyle,
   parentKey: string,
   key: string,
-  value: string | number | number[] | Transform | NestedStyle
+  value: SassyViewStyle | SassyTextStyle | SassyImageStyle | NestedStyle,
 ) => {
   if (!nativeStyles[parentKey]) nativeStyles[parentKey] = {};
   nativeStyles[parentKey][key] = value;
@@ -92,7 +98,7 @@ export const applySharedStyles = (
 /**
  * Handles shorthand inset key.
  */
-const handleShorthandInset = (_key: string, value: NestedStyle): NestedStyle => {
+const handleShorthandInset = (key: string, value: NestedStyle): NestedStyle => {
   if (typeof value === 'number') {
     return { top: value, right: value, bottom: value, left: value };
   }
@@ -114,7 +120,7 @@ const handleShorthandInset = (_key: string, value: NestedStyle): NestedStyle => 
     }
   }
 
-  throw new Error(`Invalid value for inset: Expected a number or an array of numbers, but got ${typeof value}. Value: ${JSON.stringify(value)}`);
+  throw new Error(`Invalid value for ${key}: Expected a number or an array of numbers, but got ${typeof value}. Value: ${JSON.stringify(value)}`);
 };
 
 /**
@@ -160,7 +166,7 @@ const handleShorthandSpacing = (key: string, value: NestedStyle): NestedStyle =>
   throw new Error(`Invalid value for ${key}: Expected a number or an array of numbers, but got ${typeof value}. Value: ${JSON.stringify(value)}`);
 };
 
-const handleShorthandGap = (_key: string, value: NestedStyle): NestedStyle => {
+const handleShorthandGap = (key: string, value: NestedStyle): NestedStyle => {
   if (typeof value === 'number') {
     return { gap: value };
   };
@@ -181,7 +187,7 @@ const handleShorthandGap = (_key: string, value: NestedStyle): NestedStyle => {
     }
   }
 
-  throw new Error(`Invalid value for gap: Expected a number or an array of numbers, but got ${typeof value}. Value: ${JSON.stringify(value)}`);
+  throw new Error(`Invalid value for ${key}: Expected a number or an array of numbers, but got ${typeof value}. Value: ${JSON.stringify(value)}`);
 };
 
 /**
