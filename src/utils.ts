@@ -4,7 +4,7 @@ import {
   SassyImageStyle,
   SassyTextStyle,
   SassyViewStyle,
-} from './types';
+} from './types.d';
 
 /**
  * List of keys that should not be flattened (compound styles).
