@@ -1,7 +1,9 @@
 <div align="center">
-    <p align="center">
     <img src="./assets/nativesass-banner.png" alt="NativeSass">
-</p>
+    <h1>NativeSass</h1>
+    <p>
+        <strong>Syntactically Awesome StyleSheets the Native Way</strong>
+    </p>
 
 [![NPM Version](https://img.shields.io/npm/v/native-sass?logo=npm&logoColor=cb3837&label=Version&color=cc6699)](https://npmjs.com/package/native-sass)
 [![NPM Downloads](https://img.shields.io/npm/dw/native-sass?logo=npm&logoColor=cb3837&label=Downloads&color=cc6699)](https://npmjs.com/package/native-sass)
@@ -9,7 +11,7 @@
 [![runs-with-expo](https://img.shields.io/badge/Runs%20with%20Expo%20Go-cc6699.svg?logo=EXPO&labelColor=f3f3f3&logoColor=000)](https://expo.dev/client)
 </div>
 
-<img width=100% height=100 src="https://capsule-render.vercel.app/api?type=venom&color=353839&height=200&section=header&text=NativeSass&fontColor=cc6699&fontSize=50&animation=twinkling" alt="NativeSass"/>
+<br>
 
 ## ⚛️ About
 
