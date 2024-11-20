@@ -30,6 +30,8 @@ Or use the following if you're using `yarn`:
 yarn add native-sass
 ```
 
+NativeSass works with both the React Native CLI and Expo CLI, and the installation steps are the same.
+
 ## Features
 
 This section covers features included in this library, together with code snippets to exemplify. A separate documentation website will be available in the future.
