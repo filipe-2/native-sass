@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-## 🌟 **Did you like? Star the repo!** 🌟
+## 🌟 Did you like? Star the repo!
 
 <div>
   <img align=left width=75 height=75 src="https://www.torquemetals.com/wp-content/uploads/wired-lineal-237-star-rating-morph.gif">
