@@ -18,7 +18,7 @@ A React Native library that lets you create StyleSheets with Sass- and CSS-like 
 
 ## Installation
 
-To use `native-sass` in your React Native project, just run this command from your terminal if you're using `npm`:
+To use `native-sass` in your project, just run this command from your terminal if you're using `npm`:
 
 ```bash
 npm install native-sass
