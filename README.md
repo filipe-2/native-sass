@@ -247,9 +247,7 @@ const styles = StyleSheet.create({
     If you find this project helpful, inspiring, or just plain awesome, please give it a ⭐!
   </p>
   <p>
-    Your support encourages us and helps us keep the project growing more and more. 💖
+    Your support encourages us and helps us keep the project growing more and more. 💖<br><br>
+    If you're signed in, click the <strong>Star</strong> button at the top of this page.
   </p>
 </div>
-
-### How to Star:
-1. If you're signed in, click the **Star** button at the top of this page.
