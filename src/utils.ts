@@ -1,3 +1,4 @@
+import { Animated, DimensionValue } from 'react-native';
 import {
   NativeStyle,
   NestedStyle,
@@ -96,14 +97,27 @@ export const applySharedStyles = (
 };
 
 /**
+ * Type guard to check if a value is a valid DimensionValue.
+ */
+function isDimensionValue(value: any): value is DimensionValue {
+  return (
+    typeof value === 'number' || // Is a number
+    value === 'auto' || // Is 'auto'
+    (typeof value === 'string' && /^(\d+(\.\d+)?)(%)?$/.test(value)) || // Is a percentage string (e.g., '10%' or '10.5%')
+    value === null || // Is null
+    (value && typeof value.addListener === 'function') // Is an Animated.AnimatedNode
+  );
+}
+
+/**
  * Handles shorthand inset key.
  */
 const handleShorthandInset = (key: string, value: NestedStyle): NestedStyle => {
-  if (typeof value === 'number') {
+  if (isDimensionValue(value)) {
     return { top: value, right: value, bottom: value, left: value };
   }
 
-  if (Array.isArray(value)) {
+  if (Array.isArray(value) && value.every((i) => isDimensionValue(i))) {
     const [top, right, bottom, left] = value;
 
     switch (value.length) {
@@ -120,21 +134,21 @@ const handleShorthandInset = (key: string, value: NestedStyle): NestedStyle => {
     }
   }
 
-  throw new Error(`Invalid value for ${key}: Expected a number or an array of numbers, but got ${typeof value}. Value: ${JSON.stringify(value)}`);
+  throw new Error(`Invalid value for ${key}: Expected a number, 'auto', a percentage, or an array with only those values, got ${typeof value}.`);
 };
 
 /**
  * Handles special shorthand spacing keys.
  */
 const handleShorthandSpacing = (key: string, value: NestedStyle): NestedStyle => {
-  if (typeof value === 'number') {
+  if (isDimensionValue(value)) {
     return {
       [`${key}Vertical`]: value,
       [`${key}Horizontal`]: value,
     };
   }
 
-  if (Array.isArray(value)) {
+  if (Array.isArray(value) && value.every((i) => isDimensionValue(i))) {
     const [top, right, bottom, left] = value;
 
     switch (value.length) {
@@ -159,19 +173,22 @@ const handleShorthandSpacing = (key: string, value: NestedStyle): NestedStyle =>
           [`${key}Left`]: left,
         };
       default:
-        throw new Error(`Invalid ${key} array length: Expected 1, 2, 3, or 4, but got ${value.length}. Value: ${JSON.stringify(value)}`);
+        throw new Error(`Invalid ${key} array length: Expected 1, 2, 3, or 4, got ${value.length}.`);
     }
   }
 
-  throw new Error(`Invalid value for ${key}: Expected a number or an array of numbers, but got ${typeof value}. Value: ${JSON.stringify(value)}`);
+  throw new Error(`Invalid value for ${key}: Expected a number, 'auto', a percentage, or an array with only those values, got ${typeof value}.`);
 };
 
+/**
+ * Handles gap shorthand.
+ */
 const handleShorthandGap = (key: string, value: NestedStyle): NestedStyle => {
   if (typeof value === 'number') {
     return { gap: value };
   };
 
-  if (Array.isArray(value)) {
+  if (Array.isArray(value) && value.every((i) => typeof i === 'number')) {
     const [row, column] = value;
 
     switch (value.length) {
@@ -183,11 +200,11 @@ const handleShorthandGap = (key: string, value: NestedStyle): NestedStyle => {
           columnGap: column,
         };
       default:
-        throw new Error(`Invalid value for gap: ${JSON.stringify(value)}`);
+        throw new Error(`Invalid gap array length: Expected 1 or 2, got ${value.length}.`);
     }
   }
 
-  throw new Error(`Invalid value for ${key}: Expected a number or an array of numbers, but got ${typeof value}. Value: ${JSON.stringify(value)}`);
+  throw new Error(`Invalid value for ${key}: Expected a number or an array of numbers, got ${typeof value}.`);
 };
 
 /**

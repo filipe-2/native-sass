@@ -21,7 +21,7 @@ type DimensionValueArray = [
 /**
  * Represents an array of values for the `gap` property, supporting a row and column value.
  */
-type GapValueArray = [number | string, (number | string)?];
+type GapValueArray = [number, number?];
 
 /**
  * Represents a reduced version of the React Native ViewStyle interface,
@@ -36,7 +36,7 @@ interface SassyFlexProps {
   inset?: DimensionValue | DimensionValueArray | undefined;
   margin?: DimensionValue | DimensionValueArray | undefined;
   padding?: DimensionValue | DimensionValueArray | undefined;
-  gap?: number | string | GapValueArray | undefined;
+  gap?: number | GapValueArray | undefined;
 }
 
 /**
