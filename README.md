@@ -245,13 +245,5 @@ const styles = StyleSheet.create({
 
 ## 🌟 Did you like? Star the repo!
 
-<div>
-  <img align=left width=75 height=75 src="https://www.torquemetals.com/wp-content/uploads/wired-lineal-237-star-rating-morph.gif">
-  <p>
-    If you find this project helpful, inspiring, or just plain awesome, please give it a ⭐!
-  </p>
-  <p>
-    Your support encourages us and helps us keep the project growing more and more. 💖<br><br>
-    To star the repo, just click the <strong>Star</strong> button at the top of this page.
-  </p>
-</div>
+If you find this project helpful, inspiring, or just plain awesome, please give it a ⭐!  Your support encourages us and helps us keep the project growing more and more.
+To star the repo, just click the <strong>Star</strong> button at the top of this page.
