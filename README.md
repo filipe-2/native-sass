@@ -12,11 +12,11 @@
 
 <br>
 
-## ⚛️ About
+## About
 
 A React Native library that lets you create StyleSheets with Sass- and CSS-like functionality, like nesting and shared styles. With this library, you can nest styles, use shared styles to apply properties to multiple style objects at once, and much more, without losing the default experience of creating StyleSheets the React Native way.
 
-## ⚛️ Installation
+## Installation
 
 To use `native-sass` in your React Native project, just run this command from your terminal if you're using `npm`:
 
@@ -30,7 +30,7 @@ Or use the following if you're using `yarn`:
 yarn add native-sass
 ```
 
-## ⚛️ Features
+## Features
 
 ### ▶ Nesting
 
@@ -213,7 +213,7 @@ const styles = StyleSheet.create(sassy({
 
 We wrap the keys we want to apply the shared styles to with quotes and separate them with commas.
 
-## ⚛️ Built-in JS functionalities
+## Built-in JS functionalities
 
 Some Sass functionalities, like mixins and maps, can be mimicked using built-in JS capabilities.
 
