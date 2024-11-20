@@ -217,6 +217,57 @@ const styles = StyleSheet.create(sassy({
 
 We wrap the keys we want to apply the shared styles to with quotes and separate them with commas.
 
+### Shorthand properties
+
+In NativeSass, shorthand properties help you define multiple related style values with a more concise syntax. These shorthand properties are designed to make your stylesheets more efficient and readable by consolidating related properties into a single declaration. If you're familiar with CSS, you’ll find these shorthand properties quite similar to how you would define them in a traditional stylesheet.
+
+The following shorthand properties are available:
+
+1. **Margin & Padding**: These properties allow you to define all four directions (top, right, bottom, left) in a single declaration.  
+   - **Syntax**:  
+     - Single value: `margin: 10;` applies 10px to all sides.
+     - Two values: `margin: [10, 20];` applies 10px to top and bottom, and 20px to left and right.
+     - Three values: `margin: [10, 20, 30];` applies 10px to top, 20px to left and right, and 30px to bottom.
+     - Four values: `margin: [10, 20, 30, 40];` applies 10px to top, 20px to right, 30px to bottom, and 40px to left.
+    
+     These values can be any of the following types:
+     - **number**: A plain number (e.g., `10`).
+     - **'auto'**: The `auto` keyword, which can be used for flexible positioning.
+     - **Percentage**: A quoted percentage string (e.g., `'10%'`).
+     - **AnimatedNode**: If you're using React Native's animation API, this can be an animated value (e.g., `Animated.Value`).
+   
+2. **Inset**: This shorthand property combines the `top`, `right`, `bottom`, and `left` properties into a single value, making it easier to position elements in a box.
+   - **Syntax**:  
+     - Single value: `inset: 10;` applies 10px to all sides.
+     - Two values: `inset: [10, 20];` applies 10px to top and bottom, and 20px to left and right.
+     - Three values: `inset: [10, 20, 30];` applies 10px to top, 20px to left and right, and 30px to bottom.
+     - Four values: `inset: [10, 20, 30, 40];` applies 10px to top, 20px to right, 30px to bottom, and 40px to left.
+    
+     The values in `inset` are the same as the ones for `margin` and `padding`.
+
+3. **Gap**: This shorthand property defines the space between items in a flex container. It is similar to how you would define the `row-gap` and `column-gap` in CSS.
+   - **Syntax**:
+     - Single value: `gap: 10;` applies 10px for both row and column gaps.
+     - Two values: `gap: [10, 20];` applies 10px for row gap and 20px for column gap.
+
+     The values in `gap` can be either a `number` or `string`.
+
+Here's a concrete example of how you can use the shorthand properties in your project:
+
+```ts
+const styles = StyleSheet.create(sassy({
+  container: {
+    flexDirection: 'row',
+    gap: 10,
+    margin: [10, 20],
+    padding: ['auto', '20%', 'auto', 10],  // Applies 'auto' to top padding, 20% right, 'auto' bottom, and 10px left
+  },
+  box: {
+    inset: ['auto', '20%'],  // 'auto' for top and bottom, 20% for left and right
+  }
+}));
+```
+
 ## Built-in JS functionalities
 
 Some Sass functionalities, like mixins and maps, can be mimicked using built-in JS capabilities.
