@@ -7,7 +7,8 @@
 [![NPM Version](https://img.shields.io/npm/v/native-sass?logo=npm&logoColor=cb3837&label=Version&color=cc6699)](https://npmjs.com/package/native-sass)
 [![NPM Downloads](https://img.shields.io/npm/dw/native-sass?logo=npm&logoColor=cb3837&label=Downloads&color=cc6699)](https://npmjs.com/package/native-sass)
 [![Github](https://img.shields.io/badge/License-MIT-cc6699)](https://github.com/filipe-2/native-sass/blob/main/LICENSE)
-[![runs-with-expo](https://img.shields.io/badge/Runs%20with%20Expo%20Go-cc6699.svg?logo=EXPO&labelColor=f3f3f3&logoColor=000)](https://expo.dev/client)
+[![runs-with-expo](https://img.shields.io/badge/Runs%20with%20Expo-cc6699.svg?logo=EXPO&labelColor=fff&logoColor=000)](https://expo.dev/client)
+[![runs-with-CLI](https://img.shields.io/badge/Runs%20with%20CLI-cc6699.svg?logo=React&labelColor=555&logoColor=61dbfb)](https://expo.dev/client)
 </div>
 
 <br>
