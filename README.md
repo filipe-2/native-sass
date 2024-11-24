@@ -1,6 +1,6 @@
 <div align="center">
     <img src="./assets/nativesass-banner.png" alt="NativeSass">
-    <h1>NativeSass</h1>
+    <h1><a href="https://nativesass.github.io">NativeSass</a></h1>
     <p><strong>Syntactically Awesome StyleSheets the Native Way</strong><br>
     Use Sass styling features with React Native</p>
 
