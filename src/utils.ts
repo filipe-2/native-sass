@@ -5,7 +5,7 @@ import {
   SassyImageStyle,
   SassyTextStyle,
   SassyViewStyle,
-} from '../lib/typescript/types';
+} from './types';
 
 /**
  * List of keys that should not be flattened (compound styles).
