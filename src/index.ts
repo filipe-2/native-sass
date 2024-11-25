@@ -1,4 +1,4 @@
-import { NestedStyle } from './src/types';
+import { NestedStyle } from './types';
 import {
   ignoredKeys,
   specialShorthandKeys,
@@ -8,7 +8,7 @@ import {
   isObject,
   assignFlatStyle,
   assignIgnoredKeyStyle
-} from './src/utils';
+} from './utils';
 
 export function sassy<T extends NestedStyle>(
   nestedStyles: T,

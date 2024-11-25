@@ -1,11 +1,11 @@
-import { Animated, DimensionValue } from 'react-native';
+import { DimensionValue } from 'react-native';
 import {
   NativeStyle,
   NestedStyle,
   SassyImageStyle,
   SassyTextStyle,
   SassyViewStyle,
-} from './types.d';
+} from '../lib/typescript/types';
 
 /**
  * List of keys that should not be flattened (compound styles).

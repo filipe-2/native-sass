@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir": "./lib/typescript",
     "esModuleInterop": true,
     "jsx": "react",
     "module": "esnext",
