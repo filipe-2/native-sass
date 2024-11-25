@@ -26,7 +26,7 @@
   "bugs": {
     "url": "https://github.com/nativesass/nativesass/issues"
   },
-  "homepage": "https://github.com/nativesass/nativesass#readme",
+  "homepage": "https://nativesass.github.io",
   "devDependencies": {
     "@types/react": "^18.3.12",
     "react": "^18.3.1",
