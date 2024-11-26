@@ -2,7 +2,7 @@
   "compilerOptions": {
     "declaration": true,
     "declarationMap": true,
-    "outDir": "./lib",
+    "outDir": "./lib/module",
     "esModuleInterop": true,
     "jsx": "react",
     "module": "esnext",
