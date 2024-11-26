@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
-    "outDir": "./lib/typescript",
+    "outDir": "./lib",
     "esModuleInterop": true,
     "jsx": "react",
     "module": "esnext",
     "moduleResolution": "node",
     "removeComments": true,
+    "skipLibCheck": true,
     "target": "esnext"
-  }
+  },
+  "exclude": [
+    "test-app"
+  ]
 }
