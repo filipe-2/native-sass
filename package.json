@@ -9,6 +9,9 @@
     "lib"
   ],
   "scripts": {
+    "build:commonjs": "tsc --project tsconfig.build.json --module commonjs --outDir lib/commonjs --declaration false --declarationMap false",
+    "build:esnext": "tsc --project tsconfig.build.json --module esnext --outdir lib/module --declaration false --declarationMap false",
+    "build:declarations": "tsc --project tsconfig.build.json --emitDeclarationOnly --outDir lib/typescript && cp src/types.d.ts lib/typescript/types.d.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
