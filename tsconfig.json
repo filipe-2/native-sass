@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
     "outDir": "./lib",
     "esModuleInterop": true,
     "jsx": "react",
@@ -8,8 +10,5 @@
     "removeComments": true,
     "skipLibCheck": true,
     "target": "esnext"
-  },
-  "exclude": [
-    "test-app"
-  ]
+  }
 }

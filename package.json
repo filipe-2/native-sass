@@ -2,10 +2,10 @@
   "name": "native-sass",
   "version": "2.0.1",
   "description": "A React Native library that lets you create StyleSheets with Sass- and CSS-like functionality, without losing the default experience of creating them the React Native way.",
-  "types": "lib/typescript/index.d.ts",
-  "source": "./src/index.ts",
+  "main": "lib/commonjs/index.js",
+  "module": "lib/module/index.js",
+  "types": "lib/types.d.ts",
   "files": [
-    "src",
     "lib"
   ],
   "scripts": {
