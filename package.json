@@ -4,7 +4,7 @@
   "description": "A React Native library that lets you create StyleSheets with Sass- and CSS-like functionality, without losing the default experience of creating them the React Native way.",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
-  "types": "lib/types.d.ts",
+  "types": "lib/typescript/types.d.ts",
   "files": [
     "lib"
   ],
